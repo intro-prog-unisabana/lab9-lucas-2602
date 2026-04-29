@@ -8,3 +8,5 @@ class Song:
         cancion_en_minutos = self.length
         cancion_en_segundos = cancion_en_minutos * 60
         return cancion_en_segundos
+    def __str__(self):
+        return f"'{self.name}' by {self.artist} ({self.length})"

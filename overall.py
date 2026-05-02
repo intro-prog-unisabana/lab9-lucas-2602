@@ -17,6 +17,7 @@ def main():
           """TODO: Call the appropriate function from utils.py to create 
           the car, add it to the dictionary, and print the car."""
           my_car = car_utils.create_car_from_input()
+          cars[my_car.car_id] = my_car.brand, my_car.year, my_car.color, my_car.mileage
           print(my_car)
           print("Car added.")
 

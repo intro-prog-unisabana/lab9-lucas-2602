@@ -1,5 +1,6 @@
 # TODO: Import modules
-import car_utils, car
+from car_utils import create_car_from_input, display_cars
+from car import Car
 def main():
     cars = {}  # Dictionary to store cars with car_id as key and car objects as values
 
@@ -16,30 +17,36 @@ def main():
         if choice == '1':
           """TODO: Call the appropriate function from utils.py to create 
           the car, add it to the dictionary, and print the car."""
-          my_car = car_utils.create_car_from_input()
-          cars[my_car.car_id] = my_car.brand, my_car.year, my_car.color, my_car.mileage
-          print(my_car)
+          carro = create_car_from_input()
+          cars[carro.car_id] = carro  #my_car.brand, my_car.year, my_car.color, my_car.mileage
+          print(carro)
+          print(cars)
           print("Car added.")
-
 
         elif choice == '2':
           """TODO: Call the appropriate function from utils.py to display
           all the cars in the cars dictionary."""
-          car_utils.display_cars(cars)
+          display_cars(cars)
 
         elif choice == '3':
           car_id = input("Enter the car ID to drive:\n")
           miles = float(input("How many miles to drive?\n"))
           """TODO: Look up the car in the dictionary, call the appropriate
           class method to increase the mileage of the car, and print the car."""
-          car.drive(miles)
+          if car_id in cars:
+             cars[carro.car_id].drive(miles)
+             print("Mileage updated.")
+             print(cars[car_id])
 
         elif choice == '4':
           car_id = input("Enter the car ID to paint:\n")
           new_color = input("Enter the new color:\n")
           """TODO: Look up the car in the dictionary, call the appropriate
           class method to change the color of the car, and print the car."""
-          car.change_color(new_color)
+          if car_id in cars:
+             cars[carro.car_id].change_color(new_color)
+             print("Color updated.")
+             print(cars[car_id])
 
         elif choice == '5':
             print("Goodbye!")

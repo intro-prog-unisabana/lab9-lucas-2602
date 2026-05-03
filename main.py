@@ -23,8 +23,8 @@ def main():
         elif choice == "2":
             name = input("Enter the person's name:\n")
             if name == person.name:
-                account_number = input("Enter a 4-digit account number:\n")
-                balance = input("Enter the initial balance:\n")
+                account_number = int(input("Enter a 4-digit account number:\n"))
+                balance = float(input("Enter the initial balance:\n"))
                 bankAccount = BankAccount(account_number, balance)
                 person.add_account(bankAccount)
             else:

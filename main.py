@@ -23,12 +23,15 @@ def main():
         elif choice == "2":
             name = input("Enter the person's name:\n")
             persona = False
-            if person.name == name:
-                account_number = int(input("Enter a 4-digit account number:\n"))
-                balance = float(input("Enter the initial balance:\n"))
-                bankAccount = BankAccount(account_number, balance)
-                person.add_account(bankAccount)
-                persona = True
+
+            for person in people:
+                if person.name == name:
+                    account_number = int(input("Enter a 4-digit account number:\n"))
+                    balance = float(input("Enter the initial balance:\n"))
+                    bankAccount = BankAccount(account_number, balance)
+                    person.add_account(bankAccount)
+                    persona = True
+                    
             if persona == False:
                 print("Person not found.")
 

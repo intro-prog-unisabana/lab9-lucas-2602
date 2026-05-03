@@ -22,11 +22,20 @@ def main():
         # Option 2: Add an account to an existing person
         elif choice == "2":
             name = input("Enter the person's name:\n")
-            
+            if name == person.name:
+                account_number = input("Enter a 4-digit account number:\n")
+                balance = input("Enter the initial balance:\n")
+                bankAccount = BankAccount(account_number, balance)
+                person.add_account(bankAccount)
+            else:
+                print("Person not found.")
 
         # Option 3: Show all balances
         elif choice == "3":
-            pass
+            if len(people) == 0:
+                print("No data to show.")
+            else:
+                balance_summary(people)
 
         # Option 4: Quit
         elif choice == "4":

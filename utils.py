@@ -6,7 +6,7 @@ def person_data():
     person = Person(name)
     while continuar != "yes":
         account_number = input("Enter a 4-digit account number:\n")
-        balance = ("Enter the initial balance:\n")
+        balance = input("Enter the initial balance:\n")
         bankAccount = BankAccount(account_number, balance)
         person.add_account(bankAccount)
         continuar = input("Are you done adding accounts? (yes/no):\n").lower()
@@ -17,3 +17,4 @@ def balance_summary(person_list):
     for account in person.accounts:
         total = account.balance + total
     print(f"{person.name} : {total:.2f}")
+

@@ -1,3 +1,6 @@
+from person import Person
+from bank_account import BankAccount
+from utils import person_data, balance_summary
 def main():
     people = []  # List to store all Person objects
 
@@ -13,11 +16,13 @@ def main():
 
         # Option 1: Add a new person
         if choice == "1":
-            pass
+            person = person_data()
+            people.append(person)
 
         # Option 2: Add an account to an existing person
         elif choice == "2":
-            pass
+            name = input("Enter the person's name:\n")
+            
 
         # Option 3: Show all balances
         elif choice == "3":
